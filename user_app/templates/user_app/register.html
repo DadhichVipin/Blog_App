@@ -1,0 +1,31 @@
+{% extends 'user_app/base.html' %}
+
+{% block content %}
+<style>
+ .center_div{
+    margin: 0 auto;
+    width:40% /* value of your choice which suits your alignment */
+}
+form{
+    padding: 10px;
+    border: 2px solid;
+}
+input{
+width: 100%
+}
+
+</style>
+<div class="container center_div">
+<div class="form-group">
+ <form method="POST" novalidate>
+  <h1 class="text-center">Register</h1>
+ {% csrf_token %}
+  {% for fm in form %}
+     {{fm.errors|striptags}} <br> {{fm.label_tag}}<br> {{fm}} <br>
+  {% endfor %}
+  <br>
+ <button class="btn btn-success">Submit</button>
+ </form>
+</div>
+</div>
+ {% endblock %}

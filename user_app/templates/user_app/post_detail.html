@@ -1,0 +1,10 @@
+{% extends 'user_app/base.html' %}
+
+{% block content %}
+<h1>{{ post.title }}</h1> <small>Created By - {{ post.user }}</small>
+<hr>
+<p> {{ post.text}} </p>
+<small>Created at - {{ post.created_at }} Updated at - {{ post.updated_at }}</small>
+<br><br>
+<a href="{% url 'post'%}" class="btn btn-secondary"> Back</a>
+ {% endblock %}
